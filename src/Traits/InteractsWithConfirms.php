@@ -11,11 +11,11 @@ trait InteractsWithConfirms
     {
         $this->dispatch('open-tracker-confirm', [
             'message' => $message,
-            'title'   => $options['title'] ?? config('tracker-notifications.confirm.title'),
+            'title'   => $options['title'] ?? \config('tracker-notifications.confirm.title'),
             'type'    => $options['type'] ?? 'warning',
-            'action'  => $options['action'] ?? null, // Il metodo da chiamare
-            'params'  => $options['params'] ?? null, // Eventuali parametri (es. ID)
-            'target'  => static::class,              // Il componente che riceverà la conferma
+            'action'  => $options['action'] ?? null,
+            'params'  => $options['params'] ?? [], // Array di parametri
+            'target'  => static::getName(),       // Metodo Livewire per il nome del componente
         ]);
     }
 }

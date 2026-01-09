@@ -7,8 +7,7 @@
             this.show = true;
         },
         proceed() {
-            // Invia l'evento al componente originale usando il target salvato
-            $wire.dispatchTo(this.config.target, this.config.action, { id: this.config.params });
+            window.Livewire.dispatchTo(this.config.target, this.config.action, this.config.params);
             this.show = false;
         }
     }"
