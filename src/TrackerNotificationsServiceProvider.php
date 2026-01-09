@@ -27,6 +27,11 @@ class TrackerNotificationsServiceProvider extends ServiceProvider
                 $viewPath => $this->app->make('path.resources') . '/views/vendor/tracker-notifications',
             ], 'tracker-notifications-views');
         }
+
+        //config files
+        $this->publishes([
+            __DIR__.'/../config/tracker-notifications.php' => $this->app->configPath('tracker-notifications.php'),
+        ], 'tracker-notifications-config');
     }
 
     /**
@@ -34,6 +39,9 @@ class TrackerNotificationsServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Qui potresti registrare file di configurazione o singleton
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/tracker-notifications.php', 
+            'tracker-notifications'
+        );
     }
 }

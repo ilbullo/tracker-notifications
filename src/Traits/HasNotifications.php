@@ -2,13 +2,16 @@
 
 namespace Ilbullo\TrackerNotifications\Traits;
 
+use Illuminate\Support\Facades\Session;
+
 trait HasNotifications
 {
-    public function notify(string $message, string $type = 'success'): void
+    public function notify($message, $type = 'success')
     {
-        $this->dispatch('notify', [
-            'message' => $message,
-            'type'    => $type
-        ]);
+        // Notifica immediata per Livewire
+        $this->dispatch('notify', message: $message, type: $type);
+        
+        // Notifica per il prossimo refresh della pagina (redirect)
+        Session::flash('notify', ['message' => $message, 'type' => $type]);
     }
 }
