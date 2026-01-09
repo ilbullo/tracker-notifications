@@ -1,0 +1,22 @@
+{
+    "name": "ilbullo/tracker-notifications",
+    "description": "Sistema di notifiche High-Visibility per Livewire",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ilbullo\\TrackerNotifications\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ilbullo\\TrackerNotifications\\TrackerNotificationsServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^12.46"
+    }
+}
