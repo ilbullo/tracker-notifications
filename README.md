@@ -7,7 +7,6 @@
 Un sistema di notifiche **High-Visibility** ed elegante per Laravel Livewire 3, progettato con i principi SOLID e pronto all'uso.
 
 
-
 ## Caratteristiche
 - ✅ **Plug & Play**: installazione rapida e minima configurazione.
 - 🎨 **Modern UI**: Design scuro (Slate/Amber) con animazioni fluide via AlpineJS.
