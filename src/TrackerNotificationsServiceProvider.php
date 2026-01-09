@@ -20,7 +20,8 @@ class TrackerNotificationsServiceProvider extends ServiceProvider
 
         // Registra il componente Blade con alias 'tracker-toaster'
         Blade::component('tracker-notifications::components.toaster', 'tracker-toaster');
-
+        Blade::component('tracker-notifications::components.confirm-modal', 'tracker-confirm');
+        
         // Pubblicazione delle viste (solo in console)
         if ($this->app->runningInConsole()) {
             $this->publishes([
