@@ -20,7 +20,7 @@ Puoi installare il pacchetto tramite composer:
 
 ```bash
 composer require ilbullo/tracker-notifications
-
+```
 
 ### Registrazione Service Provider
 
